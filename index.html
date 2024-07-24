@@ -60,52 +60,7 @@
 							  <div class="time pl-3" id="seconds"></div>
 							</div>
 
-							   <!-- CONTADOR -->
-    <center style=" background-color:rgb(225, 226, 226)">
-        <h1 style="font-size: 3rem;" class="p-2 pt-3" data-aos="fade-up" data-aos-offset="300">Ya Solo Faltan</h1>
-        <div class="container">
-            <div class="charts">
-                <div class="row">
-                    <div data-aos="fade-up" data-aos-offset="300"
-                        class="chart d-flex justify-content-center align-content-center">
-                        <div class="circle center-abs"></div>
-                        <svg class="center-abs" width="150" height="150">
-                            <circle class="outer" cx="75" cy="75" r="45" />
-                        </svg>
-                        <span class="text center-abs" id="days"></span>
-                        <h3>Días</h3>
-                    </div>
-                    <div data-aos="fade-up" data-aos-offset="300"
-                        class="chart d-flex justify-content-center align-content-center">
-                        <div class="circle center-abs"></div>
-                        <svg class="center-abs" width="150" height="150">
-                            <circle class="outer" cx="75" cy="75" r="45" />
-                        </svg>
-                        <span class="text center-abs" id="hours"></span>
-                        <h3>Horas</h3>
-                    </div>
-                    <div data-aos="fade-up" data-aos-offset="300"
-                        class="chart d-flex justify-content-center align-content-center">
-                        <div class="circle center-abs"></div>
-                        <svg class="center-abs" width="150" height="150">
-                            <circle class="outer" cx="75" cy="75" r="45" />
-                        </svg>
-                        <span class="text center-abs" id="minutes"></span>
-                        <h3>Minutos</h3>
-                    </div>
-                    <div data-aos="fade-up" data-aos-offset="300"
-                        class="chart d-flex justify-content-center align-content-center">
-                        <div class="circle center-abs"></div>
-                        <svg class="center-abs" width="150" height="150">
-                            <circle class="outer" cx="75" cy="75" r="45" />
-                        </svg>
-                        <span class="text center-abs" id="seconds"></span>
-                        <h3>Segundos</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </center>
+							  
 
 						</div>
 					</div>
@@ -284,45 +239,6 @@
   <script src="js/main.js"></script>
     
 
-
-
-  <script>
-	var countDownDate = new Date("Dec 14, 2024 16:00:00").getTime();
-	var x = setInterval(function () {
-		var now = new Date().getTime();
-		var distance = countDownDate - now;
-		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-		document.getElementById("days").innerHTML = days;
-		document.getElementById("hours").innerHTML = hours;
-		document.getElementById("minutes").innerHTML = minutes;
-		document.getElementById("seconds").innerHTML = seconds;
-		effectCircle(days, hours, minutes, seconds);
-	}, 1000);
-	effectCircle = function (d, h, m, s) {
-		const max_sec = 60;
-		const max_min = 60;
-		const max_hour = 24;
-		const max_day = 30;
-		const strokeDashoffset = 439;
-		var circleSVG = document.getElementsByClassName('outer');
-		var valPerDay = strokeDashoffset / max_day; // el valor de cada periodo segun la longitud del circulo
-		var size = strokeDashoffset - (valPerDay * d); // restamos el valor del periodo a la longitud del circulo
-		circleSVG[0].style.strokeDashoffset = size; // establemos nuevo valor al la longitud del circulo
-		var valPerHour = strokeDashoffset / max_hour;
-		var size = strokeDashoffset - (valPerHour * h);
-		circleSVG[1].style.strokeDashoffset = size;
-		// circulo minutos
-		var valPerMin = strokeDashoffset / max_min;
-		var size = strokeDashoffset - (valPerMin * m);
-		circleSVG[2].style.strokeDashoffset = size;
-		// circulo segundos
-		var valPerSecond = strokeDashoffset / max_sec;
-		var size = strokeDashoffset - (valPerSecond * s);
-		circleSVG[3].style.strokeDashoffset = size;
-	}
-</script>
+  
   </body>
 </html>
